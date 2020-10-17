@@ -1,0 +1,7 @@
+-Deterministic policies choose an action with certainty rather than stocastic policies which sample from a policy space 
+-Deep deterministic models work by combining actor-critic methods with deepQ learning 
+
+Classes:
+1. A class to encourage exploration - introduces noise
+    - Deterministic policies wont explore inherently which is why we need this
+2. A class to handle the replay memory - DeepQ replay buffer

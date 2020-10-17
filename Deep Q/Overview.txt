@@ -1,0 +1,20 @@
+DeepQ learning is a model free, bootstrapped, off policy learning method
+
+Model Free: don't need to know anything about the dynamics of the 
+environment we're going to learn action-reward pairs (not state information)
+
+Bootstrapped: We construct estimates of action-value functions based on ealier estimates
+we use one estimate to update another
+
+Off Policy: We have a policy that generates actions = epsilon greedy - we use this
+policy for updating 
+
+Notes:
+
+this code is a simple representation of a DeepQ learning agent not the full 
+-Full DeepQ agents have both replay and target network
+--this model only has a replay network because our use case (lunar-lander)
+--does not require a target network. 
+--replay network is always required for DeepQ - very unstable otherwise
+
+DeepQ does not work for continuous action spaces 
