@@ -1,7 +1,19 @@
--Deterministic policies choose an action with certainty rather than stocastic policies which sample from a policy space 
--Deep deterministic models work by combining actor-critic methods with deepQ learning 
+Machine Learning with Phil Tutorial Overview:
 
-Classes:
-1. A class to encourage exploration - introduces noise
-    - Deterministic policies wont explore inherently which is why we need this
-2. A class to handle the replay memory - DeepQ replay buffer
+    In this tutorial we will code a deep deterministic policy gradient (DDPG) agent in Pytorch, 
+    to beat the continuous lunar lander environment.
+
+    DDPG combines the best of Deep Q Learning and Actor Critic Methods into an algorithm that can 
+    solve environments with continuous action spaces. We will have an actor network that learns the 
+    (deterministic) policy, coupled with a critic network to learn the action-value functions. We 
+    will make use of a replay buffer to maximize sample efficiency, as well as target networks to 
+    assist in algorithm convergence and stability.
+
+    To deal with the explore exploit dilemma, we will introduce noise into the agent's action choice 
+    function. This noise is the Ornstein Uhlenbeck noise that models temporal correlations of brownian 
+    motion. 
+
+    Keep in mind that the performance you see is from an agent that is still in training mode, i.e. it 
+    still has some noise in its action. A fully trained agent in evaluation mode will perform even better. 
+    You can fix this up in the code by adding a parameter to the choose action function, and omitting the 
+    noise if you pass in a variable to indicate you are in evaluation mode.
